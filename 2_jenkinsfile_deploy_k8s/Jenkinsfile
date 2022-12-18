@@ -35,7 +35,7 @@ pipeline {
                 label 'first-agent'
             }
             steps {
-                git url: 'https://github.com/asiamegic/docker-node-hello-world.git'
+                git url: 'https://github.com/asiamegic/jenkins_terraform.git'
                 sh 'kubectl apply -f  ~/.k8s/deployment.yml'
                 sh 'kubectl apply -f  ~/.k8s/service.yml'
                 sh 'kubectl apply -f  ~/.k8s/ingress.yml'

@@ -12,3 +12,5 @@ content :
 2_jenkinsfile_deploy_k8s - contains the pipeline
 terraform - terraform modules with JS script archive
 k8 - kubernetes deployment configuration
+
+docker build repo and js app - https://github.com/asiamegic/docker-node-hello-world

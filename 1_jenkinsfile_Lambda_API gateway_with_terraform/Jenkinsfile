@@ -5,7 +5,7 @@ pipeline {
     stage('Setup') {
       steps {
         // git clones of the Terraform project
-        git url: 'https://github.com/asiamegic/docker-node-hello-world.git'
+        git url: 'https://github.com/asiamegic/jenkins_terraform.git'
       }
     }
 

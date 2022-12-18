@@ -1,0 +1,33 @@
+pipeline {
+  agent any
+
+  stages {
+    stage('Setup') {
+      steps {
+        // git clones of the Terraform project
+        git url: 'https://github.com/asiamegic/docker-node-hello-world.git'
+      }
+    }
+
+    stage('Terraform Init') {
+      steps {
+        // Initialize the Terraform working directory and download the required plugins
+        sh 'cd ~/terraform/ && terraform init'
+      }
+    }
+
+    stage('Terraform Plan') {
+      steps {
+        // Run terraform plan to create an execution plan for creating the resources defined in your Terraform configuration
+        sh 'terraform plan'
+      }
+    }
+
+    stage('Terraform Apply') {
+      steps {
+        // Run terraform apply to apply the execution plan and create the resources
+        sh 'terraform apply --auto-approve'
+      }
+    }
+  }
+}
